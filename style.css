@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    margin: 0;
+    /* align-items:center; */
+}
+
+.container {
+    display: flex;
+}
+
+.square {
+    border-style: solid;
+    width: 100px;
+    height: 100px;
+}

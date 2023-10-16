@@ -1,14 +1,19 @@
 const container = document.querySelector(".container");
+let squares = 4;
 
-const div = document.createElement("div");
-div.style.width = "100px";
-div.style.height = "100px";
-div.style.background = "red";
-div.style.color = "red";
+for(let i = 0; i < squares; i++){
 
-// container.style.width = "100px";
-// container.style.height = "100px";
-// container.style.background = "green";
-// container.style.color = "green";
+    const row = document.createElement("div");
+    for(let j = 0; j < squares; j++){
 
-container.appendChild(div);
+        const div = document.createElement("div");
+        div.classList.add("square");
+        // div.style.width = "100px";
+        // div.style.height = "100px";
+        // div.style.border = "thick solid blue";
+        // div.style.background = "red";
+        row.appendChild(div);
+    }
+
+    container.appendChild(row);
+}
