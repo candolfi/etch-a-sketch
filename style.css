@@ -1,7 +1,9 @@
 body {
     height: 100vh;
     margin: 0;
-    /* align-items:center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -9,7 +11,7 @@ body {
     flex-direction: column;
     width: 480px;
     height: 480px;
-    border-style: dashed;
+    /* border-style: dashed; */
 }
 
 .square {

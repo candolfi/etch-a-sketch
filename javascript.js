@@ -1,5 +1,9 @@
 const container = document.querySelector(".container");
-let squares = 4;
+
+// Later this will become a "create grid" function with 
+// squares as the parameter retrieved from the user
+
+let squares = 20;
 
 for(let i = 0; i < squares; i++){
 
@@ -14,3 +18,10 @@ for(let i = 0; i < squares; i++){
 
     container.appendChild(row);
 }
+/////////////////////////////////////////////
+
+document.querySelectorAll('.square').forEach(item => {
+    item.addEventListener("mouseenter", event => {
+        item.style.backgroundColor = 'blue';
+    })
+})
