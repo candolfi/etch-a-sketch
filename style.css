@@ -2,6 +2,14 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: tan;
+}
+
+.etch {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -14,6 +22,7 @@ body {
     border-style: solid;
     border-radius: 25px;
     overflow-x: hidden;
+    background-color: white;
 }
 
 .square {
@@ -26,4 +35,9 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+}
+
+.grid-size {
+    margin: 5px;
+    border-radius: 5px;
 }
