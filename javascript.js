@@ -1,27 +1,48 @@
 const container = document.querySelector(".container");
+let rowSize = 12;
 
-// Later this will become a "create grid" function with 
-// squares as the parameter retrieved from the user
-
-let squares = 20;
-
-for(let i = 0; i < squares; i++){
-
-    const row = document.createElement("div");
-    row.classList.add("row");
-    for(let j = 0; j < squares; j++){
-
-        const div = document.createElement("div");
-        div.classList.add("square");
-        row.appendChild(div);
-    }
-
-    container.appendChild(row);
-}
-/////////////////////////////////////////////
-
+createGrid(rowSize);
 document.querySelectorAll('.square').forEach(item => {
     item.addEventListener("mouseenter", event => {
         item.style.backgroundColor = 'blue';
     })
 })
+
+
+
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+    rowSize = prompt('Please enter the desired number of squares per row');
+        while(rowSize > 100){
+            rowSize = prompt('Too many squares, please enter a number less than or equal to 100');
+        }
+        container.innerHTML = "";
+        createGrid(rowSize);
+        document.querySelectorAll('.square').forEach(item => {
+            item.addEventListener("mouseenter", event => {
+                item.style.backgroundColor = 'blue';
+            })
+        })
+})
+
+///////////////////////////////////////////////////////
+
+function createGrid(length){
+    for(let i = 0; i < length; i++){
+
+        const row = document.createElement("div");
+        row.classList.add("row");
+        for(let j = 0; j < length; j++){
+    
+            const div = document.createElement("div");
+            div.classList.add("square");
+            row.appendChild(div);
+        }
+    
+        container.appendChild(row);
+    }
+
+}
+
+
+

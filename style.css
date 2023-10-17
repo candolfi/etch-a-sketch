@@ -9,8 +9,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    width: 480px;
-    height: 480px;
+    width: 720px;
+    height: 720px;
     /* border-style: dashed; */
 }
 
