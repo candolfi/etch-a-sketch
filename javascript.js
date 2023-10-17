@@ -5,7 +5,7 @@ const rgb = document.querySelector('#rgb');
 button.addEventListener('click', () => {
         let rowSize = getRowSize();
         let colour = 'black';
-        rgb.disabled = true;
+        rgb.checked = false;
         container.innerHTML = "";
         createGrid(rowSize);
         hoverColour(colour);      
