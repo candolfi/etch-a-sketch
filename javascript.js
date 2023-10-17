@@ -1,16 +1,6 @@
 const container = document.querySelector(".container");
-let rowSize = 12;
-
-createGrid(rowSize);
-document.querySelectorAll('.square').forEach(item => {
-    item.addEventListener("mouseenter", event => {
-        item.style.backgroundColor = 'blue';
-    })
-})
-
-
-
 const button = document.querySelector('button');
+
 button.addEventListener('click', () => {
     rowSize = prompt('Please enter the desired number of squares per row');
         while(rowSize > 100){
@@ -18,13 +8,25 @@ button.addEventListener('click', () => {
         }
         container.innerHTML = "";
         createGrid(rowSize);
+        let colour = 'black';
         document.querySelectorAll('.square').forEach(item => {
             item.addEventListener("mouseenter", event => {
-                item.style.backgroundColor = 'blue';
+                item.style.backgroundColor = colour;
             })
         })
+      
 })
 
+const rgb = document.querySelector('#rgb');
+rgb.addEventListener('click', () => {
+    container.innerHTML = "";
+    createGrid(rowSize);
+    document.querySelectorAll('.square').forEach(item => {
+        item.addEventListener("mouseenter", event => {
+            item.style.backgroundColor = randomColour();
+        })
+    })
+})
 ///////////////////////////////////////////////////////
 
 function createGrid(length){
@@ -41,8 +43,18 @@ function createGrid(length){
     
         container.appendChild(row);
     }
-
 }
 
+function randomColour(){
+    let maxColourVal = 16777215;
+    let randomNum = Math.floor(Math.random() * maxColourVal).toString(16);
+    let randColour = randomNum.padStart(6, 0);
+
+    return `#${randColour.toUpperCase()}`
+}
+
+function hoverColour(colour){
+
+}
 
 

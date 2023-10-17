@@ -11,11 +11,13 @@ body {
     flex-direction: column;
     width: 720px;
     height: 720px;
-    /* border-style: dashed; */
+    border-style: solid;
+    border-radius: 25px;
+    overflow-x: hidden;
 }
 
 .square {
-    border-style: solid;
+    /* border-style: solid; */
     height: 100%;
     width: 100%;
 }
