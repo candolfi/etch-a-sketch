@@ -5,16 +5,12 @@ const rgb = document.querySelector('#rgb');
 button.addEventListener('click', () => {
         let rowSize = getRowSize();
         let colour = 'black';
+        rgb.disabled = true;
         container.innerHTML = "";
         createGrid(rowSize);
         hoverColour(colour);      
 })
 
-rgb.addEventListener('click', () => {
-    container.innerHTML = "";
-    createGrid(rowSize);
-    randomHoverColour();   
-})
 ///////////////////////////////////////////////////////
 
 function createGrid(length){
@@ -65,4 +61,18 @@ function getRowSize(){
     return rowSize;
 }
 
+function rgbToggle(){
+    const checkbox = document.getElementById("rgb");
 
+    if(checkbox.checked == true){
+        container.innerHTML = "";
+        createGrid(rowSize);
+        randomHoverColour(); 
+    }
+    else{
+        let colour = 'black';
+        container.innerHTML = "";
+        createGrid(rowSize);
+        hoverColour(colour);    
+    }
+}
