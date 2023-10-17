@@ -1,31 +1,19 @@
 const container = document.querySelector(".container");
 const button = document.querySelector('button');
+const rgb = document.querySelector('#rgb');
 
 button.addEventListener('click', () => {
-    rowSize = prompt('Please enter the desired number of squares per row');
-        while(rowSize > 100){
-            rowSize = prompt('Too many squares, please enter a number less than or equal to 100');
-        }
+        let rowSize = getRowSize();
+        let colour = 'black';
         container.innerHTML = "";
         createGrid(rowSize);
-        let colour = 'black';
-        document.querySelectorAll('.square').forEach(item => {
-            item.addEventListener("mouseenter", event => {
-                item.style.backgroundColor = colour;
-            })
-        })
-      
+        hoverColour(colour);      
 })
 
-const rgb = document.querySelector('#rgb');
 rgb.addEventListener('click', () => {
     container.innerHTML = "";
     createGrid(rowSize);
-    document.querySelectorAll('.square').forEach(item => {
-        item.addEventListener("mouseenter", event => {
-            item.style.backgroundColor = randomColour();
-        })
-    })
+    randomHoverColour();   
 })
 ///////////////////////////////////////////////////////
 
@@ -54,7 +42,27 @@ function randomColour(){
 }
 
 function hoverColour(colour){
+    document.querySelectorAll('.square').forEach(item => {
+        item.addEventListener("mouseenter", event => {
+            item.style.backgroundColor = colour;
+        })
+    })
+}
 
+function randomHoverColour(){
+    document.querySelectorAll('.square').forEach(item => {
+        item.addEventListener("mouseenter", event => {
+            item.style.backgroundColor = randomColour();
+        })
+    })
+}
+
+function getRowSize(){
+    rowSize = prompt('Please enter the desired number of squares per row');
+    while(rowSize > 100){
+        rowSize = prompt('Too many squares, please enter a number less than or equal to 100');
+    }
+    return rowSize;
 }
 
 
